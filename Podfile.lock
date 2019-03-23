@@ -1,0 +1,16 @@
+PODS:
+  - SwiftyUtils (2.0.0)
+
+DEPENDENCIES:
+  - SwiftyUtils
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - SwiftyUtils
+
+SPEC CHECKSUMS:
+  SwiftyUtils: ae914aa96b5672e9282904771e5e5b44d2e307d6
+
+PODFILE CHECKSUM: d6ac2a0bb1870f0874533c60bab50aada78b68af
+
+COCOAPODS: 1.5.3

@@ -16,6 +16,8 @@
 		5A34EEED224633BA00C55BE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A34EEEC224633BA00C55BE8 /* Assets.xcassets */; };
 		5A34EEF0224633BA00C55BE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A34EEEE224633BA00C55BE8 /* LaunchScreen.storyboard */; };
 		5A34EEFB224633BA00C55BE8 /* GatelyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A34EEFA224633BA00C55BE8 /* GatelyTests.swift */; };
+		66CCFB87A25B22F6016A0BED /* Pods_GatelyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F65A60C3062EB915D21ABF0B /* Pods_GatelyTests.framework */; };
+		9F5212915BC6A49ECE406023 /* Pods_Gately.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11BAC180D3B0ABEDBB88572E /* Pods_Gately.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		11BAC180D3B0ABEDBB88572E /* Pods_Gately.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gately.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3226D5735B87D2A454DC8128 /* Pods-GatelyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GatelyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GatelyTests/Pods-GatelyTests.release.xcconfig"; sourceTree = "<group>"; };
+		5534E62F52D92E3F0F452A84 /* Pods-Gately.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gately.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gately/Pods-Gately.debug.xcconfig"; sourceTree = "<group>"; };
 		5A34EEDC224633B800C55BE8 /* Gately.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gately.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A34EEDF224633B800C55BE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A34EEE1224633B800C55BE8 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -42,6 +47,9 @@
 		5A34EEF6224633BA00C55BE8 /* GatelyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GatelyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A34EEFA224633BA00C55BE8 /* GatelyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatelyTests.swift; sourceTree = "<group>"; };
 		5A34EEFC224633BA00C55BE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C556A02843F5CBC6273FD0C /* Pods-Gately.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gately.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gately/Pods-Gately.release.xcconfig"; sourceTree = "<group>"; };
+		8EFFB7EF1C6416A578B14F8B /* Pods-GatelyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GatelyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GatelyTests/Pods-GatelyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F65A60C3062EB915D21ABF0B /* Pods_GatelyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GatelyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F5212915BC6A49ECE406023 /* Pods_Gately.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66CCFB87A25B22F6016A0BED /* Pods_GatelyTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +78,8 @@
 				5A34EEDE224633B800C55BE8 /* Gately */,
 				5A34EEF9224633BA00C55BE8 /* GatelyTests */,
 				5A34EEDD224633B800C55BE8 /* Products */,
+				CDD6B43B7315A2B877606F08 /* Pods */,
+				C3653F2AE9001A0DE9917018 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +117,26 @@
 			path = GatelyTests;
 			sourceTree = "<group>";
 		};
+		C3653F2AE9001A0DE9917018 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				11BAC180D3B0ABEDBB88572E /* Pods_Gately.framework */,
+				F65A60C3062EB915D21ABF0B /* Pods_GatelyTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CDD6B43B7315A2B877606F08 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5534E62F52D92E3F0F452A84 /* Pods-Gately.debug.xcconfig */,
+				8C556A02843F5CBC6273FD0C /* Pods-Gately.release.xcconfig */,
+				8EFFB7EF1C6416A578B14F8B /* Pods-GatelyTests.debug.xcconfig */,
+				3226D5735B87D2A454DC8128 /* Pods-GatelyTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -112,9 +144,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5A34EEFF224633BA00C55BE8 /* Build configuration list for PBXNativeTarget "Gately" */;
 			buildPhases = (
+				B96C7FFDD72DC74AE819FF59 /* [CP] Check Pods Manifest.lock */,
 				5A34EED8224633B800C55BE8 /* Sources */,
 				5A34EED9224633B800C55BE8 /* Frameworks */,
 				5A34EEDA224633B800C55BE8 /* Resources */,
+				EC19D7D159C1AF2FA9CD5901 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +163,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5A34EF02224633BA00C55BE8 /* Build configuration list for PBXNativeTarget "GatelyTests" */;
 			buildPhases = (
+				FD08C01B47E2A510CC1B697E /* [CP] Check Pods Manifest.lock */,
 				5A34EEF2224633BA00C55BE8 /* Sources */,
 				5A34EEF3224633BA00C55BE8 /* Frameworks */,
 				5A34EEF4224633BA00C55BE8 /* Resources */,
@@ -202,6 +237,75 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B96C7FFDD72DC74AE819FF59 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Gately-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC19D7D159C1AF2FA9CD5901 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Gately/Pods-Gately-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftyUtils/SwiftyUtils.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUtils.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gately/Pods-Gately-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD08C01B47E2A510CC1B697E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GatelyTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5A34EED8224633B800C55BE8 /* Sources */ = {
@@ -370,6 +474,7 @@
 		};
 		5A34EF00224633BA00C55BE8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5534E62F52D92E3F0F452A84 /* Pods-Gately.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -389,6 +494,7 @@
 		};
 		5A34EF01224633BA00C55BE8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C556A02843F5CBC6273FD0C /* Pods-Gately.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -408,6 +514,7 @@
 		};
 		5A34EF03224633BA00C55BE8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8EFFB7EF1C6416A578B14F8B /* Pods-GatelyTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -429,6 +536,7 @@
 		};
 		5A34EF04224633BA00C55BE8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3226D5735B87D2A454DC8128 /* Pods-GatelyTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
