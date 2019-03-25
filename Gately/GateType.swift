@@ -13,4 +13,12 @@ enum GateType {
         }
     }
     
+    func imageName() -> String {
+        switch self {
+        case .and: return "AND"
+        case .or: return "OR"
+        case .not: return "NOT"
+        }
+    }
+    
 }
