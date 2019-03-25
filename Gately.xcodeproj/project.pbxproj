@@ -8,14 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		5A34EEE0224633B800C55BE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A34EEDF224633B800C55BE8 /* AppDelegate.swift */; };
-		5A34EEE2224633B800C55BE8 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5A34EEE1224633B800C55BE8 /* GameScene.sks */; };
-		5A34EEE4224633B800C55BE8 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5A34EEE3224633B800C55BE8 /* Actions.sks */; };
-		5A34EEE6224633B800C55BE8 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A34EEE5224633B800C55BE8 /* GameScene.swift */; };
 		5A34EEE8224633B800C55BE8 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A34EEE7224633B800C55BE8 /* GameViewController.swift */; };
 		5A34EEEB224633B800C55BE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A34EEE9224633B800C55BE8 /* Main.storyboard */; };
 		5A34EEED224633BA00C55BE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A34EEEC224633BA00C55BE8 /* Assets.xcassets */; };
 		5A34EEF0224633BA00C55BE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A34EEEE224633BA00C55BE8 /* LaunchScreen.storyboard */; };
 		5A34EEFB224633BA00C55BE8 /* GatelyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A34EEFA224633BA00C55BE8 /* GatelyTests.swift */; };
+		5A34EF0622463ED000C55BE8 /* GateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A34EF0522463ED000C55BE8 /* GateType.swift */; };
+		5A34EF0822463F8600C55BE8 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A34EF0722463F8600C55BE8 /* Game.swift */; };
+		5A34EF0A2246457500C55BE8 /* SignalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A34EF092246457500C55BE8 /* SignalView.swift */; };
 		66CCFB87A25B22F6016A0BED /* Pods_GatelyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F65A60C3062EB915D21ABF0B /* Pods_GatelyTests.framework */; };
 		9F5212915BC6A49ECE406023 /* Pods_Gately.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11BAC180D3B0ABEDBB88572E /* Pods_Gately.framework */; };
 /* End PBXBuildFile section */
@@ -36,9 +36,6 @@
 		5534E62F52D92E3F0F452A84 /* Pods-Gately.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gately.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gately/Pods-Gately.debug.xcconfig"; sourceTree = "<group>"; };
 		5A34EEDC224633B800C55BE8 /* Gately.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gately.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A34EEDF224633B800C55BE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5A34EEE1224633B800C55BE8 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		5A34EEE3224633B800C55BE8 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
-		5A34EEE5224633B800C55BE8 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		5A34EEE7224633B800C55BE8 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		5A34EEEA224633B800C55BE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5A34EEEC224633BA00C55BE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -47,6 +44,9 @@
 		5A34EEF6224633BA00C55BE8 /* GatelyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GatelyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A34EEFA224633BA00C55BE8 /* GatelyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatelyTests.swift; sourceTree = "<group>"; };
 		5A34EEFC224633BA00C55BE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A34EF0522463ED000C55BE8 /* GateType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GateType.swift; sourceTree = "<group>"; };
+		5A34EF0722463F8600C55BE8 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		5A34EF092246457500C55BE8 /* SignalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalView.swift; sourceTree = "<group>"; };
 		8C556A02843F5CBC6273FD0C /* Pods-Gately.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gately.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gately/Pods-Gately.release.xcconfig"; sourceTree = "<group>"; };
 		8EFFB7EF1C6416A578B14F8B /* Pods-GatelyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GatelyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GatelyTests/Pods-GatelyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F65A60C3062EB915D21ABF0B /* Pods_GatelyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GatelyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,9 +96,9 @@
 			isa = PBXGroup;
 			children = (
 				5A34EEDF224633B800C55BE8 /* AppDelegate.swift */,
-				5A34EEE1224633B800C55BE8 /* GameScene.sks */,
-				5A34EEE3224633B800C55BE8 /* Actions.sks */,
-				5A34EEE5224633B800C55BE8 /* GameScene.swift */,
+				5A34EF0522463ED000C55BE8 /* GateType.swift */,
+				5A34EF0722463F8600C55BE8 /* Game.swift */,
+				5A34EF092246457500C55BE8 /* SignalView.swift */,
 				5A34EEE7224633B800C55BE8 /* GameViewController.swift */,
 				5A34EEE9224633B800C55BE8 /* Main.storyboard */,
 				5A34EEEC224633BA00C55BE8 /* Assets.xcassets */,
@@ -222,10 +222,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A34EEEB224633B800C55BE8 /* Main.storyboard in Resources */,
-				5A34EEE2224633B800C55BE8 /* GameScene.sks in Resources */,
 				5A34EEED224633BA00C55BE8 /* Assets.xcassets in Resources */,
 				5A34EEF0224633BA00C55BE8 /* LaunchScreen.storyboard in Resources */,
-				5A34EEE4224633B800C55BE8 /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,9 +310,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A34EEE6224633B800C55BE8 /* GameScene.swift in Sources */,
+				5A34EF0622463ED000C55BE8 /* GateType.swift in Sources */,
 				5A34EEE8224633B800C55BE8 /* GameViewController.swift in Sources */,
 				5A34EEE0224633B800C55BE8 /* AppDelegate.swift in Sources */,
+				5A34EF0822463F8600C55BE8 /* Game.swift in Sources */,
+				5A34EF0A2246457500C55BE8 /* SignalView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
