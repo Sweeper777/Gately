@@ -21,4 +21,15 @@ enum GateType {
         }
     }
     
+    static let allTypes: [GateType] = [
+        .and(true),
+        .and(false),
+        .or(true),
+        .or(false),
+        .not,
+    ]
+    
+    static func random() -> GateType {
+        return allTypes.randomElement()!
+    }
 }
