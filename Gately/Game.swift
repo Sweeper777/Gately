@@ -15,4 +15,11 @@ class Game {
         mainSignal = true
     }
     
+    func update() {
+        timeUntilReaching -= speed
+        if timeUntilReaching <= 0 {
+            updateNextGate()
+        }
+    }
+    
 }
