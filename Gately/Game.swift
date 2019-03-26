@@ -22,4 +22,9 @@ class Game {
         }
     }
     
+    func updateNextGate() {
+        timeUntilReaching = Double.random(in: 90...150)
+        currentlyShownGate = nextGate
+        nextGate = GateType.random()
+    }
 }
