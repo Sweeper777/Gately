@@ -7,4 +7,12 @@ class Game {
     var nextGate: GateType
     var mainSignal: Signal
     
+    init() {
+        currentlyShownGate = GateType.random()
+        nextGate = GateType.random()
+        timeUntilReaching = Double.random(in: 90...150)
+        speed = 1
+        mainSignal = true
+    }
+    
 }
