@@ -28,6 +28,20 @@ class GameViewController: UIViewController {
     }
     
     @objc func update() {
+        game.update()
+        if game.timeUntilReaching < 90 {
+            let gateView = signalView.subviews.first as? UIImageView ?? UIImageView(image: UIImage(named: game.currentlyShownGate.imageName()))
+            gateView.contentMode = .scaleAspectFit
+            let size = CGSize(width: signalView.height / 2, height: signalView.height / 2)
+            let x = signalView.signalX + (signalView.width - signalView.signalX) * (game.timeUntilReaching / 30.0).f
+            let endY = signalView.startY + size.height * newYFactor(for: game.currentlyShownGate).f
+            let y = endY - size.height / 2
+            gateView.frame = CGRect(origin: CGPoint(x: x, y: y), size: size)
+            if !signalView.subviews.contains(gateView) {
+                signalView.addSubview(gateView)
+            }
+            signalView.endY = endY
+            signalView.breakpoint = x + (x + size.width) / 2
         }
     }
     }
