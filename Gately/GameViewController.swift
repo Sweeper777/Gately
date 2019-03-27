@@ -44,5 +44,13 @@ class GameViewController: UIViewController {
             signalView.breakpoint = x + (x + size.width) / 2
         }
     }
+    
+    func newYFactor(for gate: GateType) -> Double {
+        switch gate {
+        case .and, .or:
+            return 0.2
+        case .not:
+            return 0
+        }
     }
 }
