@@ -1,6 +1,6 @@
 import CoreGraphics
 
-protocol GameObject {
+protocol GameObject : class {
     var velocity: (CGFloat, CGFloat) { get set }
     var zIndex: Int { get set }
     var position: CGPoint { get set }
