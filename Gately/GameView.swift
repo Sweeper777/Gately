@@ -24,6 +24,18 @@ class GameView: UIView {
     }
     
     @objc func update() {
+        for (index, gameObject) in gameObjects.enumerated() {
+            gameObject.position = gameObject.position.applying(
+                CGAffineTransform(
+                    translationX: gameObject.velocity.0 * self.bounds.width,
+                    y: gameObject.velocity.1 * self.bounds.height))
+            print("New position for \(type(of: gameObject)): \(gameObject.position)")
+            if gameObject.isOutOf(rect: CGRect(x: 0, y: 0, width: 1, height: 1)) {
+                gameObjects.remove(at: index)
+            }
+            
+        }
+        
         setNeedsDisplay()
     }
     
