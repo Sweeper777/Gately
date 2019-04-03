@@ -1,15 +1,20 @@
 import UIKit
 
-class AndGate: GameObject {
-    init(position: CGPoint, velocity: (CGFloat, CGFloat), zIndex: Int) {
+class AndGate: Gate {
+    
+    init(position: CGPoint, velocity: (CGFloat, CGFloat), zIndex: Int, gateType: GateType) {
         self.position = position
         self.velocity = velocity
         self.zIndex = zIndex
+        self.gateType = gateType
     }
     
     var velocity: (CGFloat, CGFloat)
     var zIndex: Int
     var position: CGPoint
+    var gateType: GateType
+    
+    let size: CGSize = CGSize(width: 0.25, height: 0.25)
     
     func draw(in rect: CGRect) {
         let path = UIBezierPath()
