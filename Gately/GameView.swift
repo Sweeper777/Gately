@@ -30,11 +30,14 @@ class GameView: UIView {
                 CGAffineTransform(
                     translationX: gameObject.velocity.0 * self.bounds.width,
                     y: gameObject.velocity.1 * self.bounds.height))
-            print("New position for \(type(of: gameObject)): \(gameObject.position)")
-            if gameObject.isOutOf(rect: CGRect(x: 0, y: 0, width: 1, height: 1)) {
+            if gameObject.shouldBeDeleted(from: self.bounds) {
                 gameObjects.remove(at: index)
+                if let gate = gameObject as? Gate {
+                    delegate?.gateDidLeaveScreen(gameView: self, gate: gate)
+                }
             }
-            
+            if let gate = gameObject as? Gate {
+            }
         }
         
         setNeedsDisplay()
