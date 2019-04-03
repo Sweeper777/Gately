@@ -12,6 +12,7 @@ class GameView: UIView {
         }
     }
     var displayLink: CADisplayLink!
+    weak var delegate: GameViewDelegate?
     
     override func draw(_ rect: CGRect) {
         for gameObject in gameObjects {
