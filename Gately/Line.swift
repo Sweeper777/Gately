@@ -1,6 +1,10 @@
 import UIKit
 
 class Line : GameObject {
+    func frame(whenDrawnIn rect: CGRect) -> CGRect {
+        return CGRect(x: position.x * rect.width, y: position.y * rect.y, width: horizontal ? length * rect.width : 0, height: horizontal ? 0 : length * rect.height)
+    }
+    
     
     init(position: CGPoint, velocity: (CGFloat, CGFloat), zIndex: Int, length: CGFloat, horizontal: Bool, color: UIColor) {
         self.zIndex = zIndex
@@ -33,14 +37,6 @@ class Line : GameObject {
             path.lineWidth = 5
             color.setStroke()
             path.stroke()
-        }
-    }
-    
-    func isOutOf(rect: CGRect) -> Bool {
-        if horizontal {
-            return position.x + length < 0
-        } else {
-            return position.y - length > 1
         }
     }
     
