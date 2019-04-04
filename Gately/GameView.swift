@@ -36,10 +36,8 @@ class GameView: UIView {
                     delegate?.gateDidLeaveScreen(gameView: self, gate: gate)
                 }
             }
-            if let gate = gameObject as? Gate {
-            }
         }
-        
+        delegate?.gameViewDidUpdate(gameView: self)
         setNeedsDisplay()
     }
     
