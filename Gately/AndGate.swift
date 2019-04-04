@@ -28,10 +28,4 @@ class AndGate: Gate {
         path.stroke()
         path.fill()
     }
-    
-    func isOutOf(rect: CGRect) -> Bool {
-        return !rect.intersects(CGRect(x: position.x * rect.width, y: position.y * rect.height, width: 0, height: 0).insetBy(dx: rect.height / -8, dy: rect.height / -8))
-    }
-    
-    
 }
