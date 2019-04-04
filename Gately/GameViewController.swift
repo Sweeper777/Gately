@@ -25,6 +25,26 @@ class GameViewController: UIViewController {
         gameView.gameObjects.append(AndGate(position: CGPoint(x: 0.5, y: 0.55), velocity: (-0.00001, 0), zIndex: 3))
     }
     
+    func addNewGameObjects() {
+        let firstPartLength = CGFloat.random(in: 0.35...0.65)
+        let secondPartLength = 1 - firstPartLength
+        let newLastY: CGFloat
+        if CGFloat.random(in: 0...1) < lastY {
+            // gate goes up
+            newLastY = lastY - 0.05
+        } else {
+            // gate goes down
+            newLastY = lastY + 0.05
+        }
+        let firstPart = Line(position: CGPoint(x: lastX, y: lastY), velocity: (speed, 0), zIndex: 0, length: firstPartLength, horizontal: true, color: .black)
+        let secondPart = Line(position: CGPoint(x: lastX + firstPartLength, y: newLastY), velocity: (speed, 0), zIndex: 0, length: secondPartLength, horizontal: true, color: .black)
+        gameView.gameObjects.append(firstPart)
+        gameView.gameObjects.append(secondPart)
+        let gate = AndGate(position: CGPoint(x: lastX + firstPartLength, y: newLastY), velocity: (speed, 0), zIndex: 3, gateType: .and(true))
+        gameView.gameObjects.append(gate)
+        lastLineObject = secondPart
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         gameView.displayLink.add(to: .current, forMode: .common)
