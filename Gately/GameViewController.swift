@@ -4,6 +4,19 @@ import SwiftyUtils
 class GameViewController: UIViewController {
     @IBOutlet var gameView: GameView!
     
+    let speed: CGFloat = -0.00002
+    
+    var signalLine: Line!
+    var dot: Dot!
+    var lastLineObject: Line!
+    var lastX: CGFloat {
+        return lastLineObject.position.x + lastLineObject.length
+    }
+    
+    var lastY: CGFloat {
+        return lastLineObject.position.y
+    }
+    
     override func viewDidLoad() {
         gameView.gameObjects.append(Line(position: CGPoint(x: 0, y: 0.5), velocity: (0, 0), zIndex: 1, length: 0.1, horizontal: true, color: UIColor.green))
         gameView.gameObjects.append(Line(position: CGPoint(x: 0.1, y: 0.5), velocity: (-0.00001, 0), zIndex: 0, length: 0.4, horizontal: true, color: UIColor.black))
