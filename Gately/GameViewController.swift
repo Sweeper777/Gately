@@ -4,7 +4,7 @@ import SwiftyUtils
 class GameViewController: UIViewController {
     @IBOutlet var gameView: GameView!
     
-    let speed: CGFloat = -0.00002
+    let speed: CGFloat = -0.00001
     
     var signalLine: Line!
     var dot: Dot!
@@ -31,19 +31,31 @@ class GameViewController: UIViewController {
     
     func addNewGameObjects() {
         let firstPartLength = CGFloat.random(in: 0.35...0.65)
+        let otherInputLength = CGFloat.random(in: 0.35...1) * firstPartLength
         let secondPartLength = 1 - firstPartLength
         let newLastY: CGFloat
+        let otherInputY: CGFloat
+        let otherInputX = lastX + firstPartLength - otherInputLength
         if CGFloat.random(in: 0...1) < lastY {
             // gate goes up
             newLastY = lastY - 0.05
+            otherInputY = lastY - 0.1
+            let otherInputVerticalBit = Line(position: CGPoint(x: otherInputX, y: otherInputY), velocity: (speed, 0), zIndex: 0, length: otherInputY, horizontal: false, color: .red)
+            gameView.gameObjects.append(otherInputVerticalBit)
         } else {
             // gate goes down
             newLastY = lastY + 0.05
+            otherInputY = lastY + 0.1
+            let otherInputVerticalBit = Line(position: CGPoint(x: otherInputX, y: 1), velocity: (speed, 0), zIndex: 0, length: 1 - otherInputY, horizontal: false, color: .red)
+            gameView.gameObjects.append(otherInputVerticalBit)
         }
         let firstPart = Line(position: CGPoint(x: lastX, y: lastY), velocity: (speed, 0), zIndex: 0, length: firstPartLength, horizontal: true, color: .black)
+        
+        let otherInputHorizontalBit = Line(position: CGPoint(x: otherInputX, y: otherInputY), velocity: (speed, 0), zIndex: 0, length: otherInputLength, horizontal: true, color: .red)
         let secondPart = Line(position: CGPoint(x: lastX + firstPartLength, y: newLastY), velocity: (speed, 0), zIndex: 0, length: secondPartLength, horizontal: true, color: .black)
         gameView.gameObjects.append(firstPart)
         gameView.gameObjects.append(secondPart)
+        gameView.gameObjects.append(otherInputHorizontalBit)
         let gate = AndGate(position: CGPoint(x: lastX + firstPartLength, y: newLastY), velocity: (speed, 0), zIndex: 3, gateType: .and(true))
         gameView.gameObjects.append(gate)
         lastLineObject = secondPart
