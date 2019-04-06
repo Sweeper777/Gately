@@ -25,18 +25,18 @@ class GameView: UIView {
     }
     
     @objc func update() {
-        for (index, gameObject) in gameObjects.enumerated() {
+        for gameObject in gameObjects {
             gameObject.position = gameObject.position.applying(
                 CGAffineTransform(
                     translationX: gameObject.velocity.0 * self.bounds.width,
                     y: gameObject.velocity.1 * self.bounds.height))
             if gameObject.shouldBeDeleted(from: self.bounds) {
-                gameObjects.remove(at: index)
                 if let gate = gameObject as? Gate {
                     delegate?.gateDidLeaveScreen(gameView: self, gate: gate)
                 }
             }
         }
+        gameObjects.removeAll(where: { $0.shouldBeDeleted(from: self.bounds) })
         delegate?.gameViewDidUpdate(gameView: self)
         setNeedsDisplay()
     }
