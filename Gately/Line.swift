@@ -33,7 +33,7 @@ class Line : GameObject {
         } else {
             let path = UIBezierPath()
             path.move(to: CGPoint(x: position.x * rect.width, y: position.y * rect.height))
-            path.addLine(to: CGPoint(x: position.x * rect.width * rect.width, y: (position.y + length) * rect.height))
+            path.addLine(to: CGPoint(x: position.x * rect.width, y: (position.y - length) * rect.height))
             path.lineWidth = 5
             color.setStroke()
             path.stroke()
