@@ -70,6 +70,10 @@ class GameViewController: UIViewController {
         super.viewDidDisappear(animated)
         gameView.displayLink.remove(from: .current, forMode: .common)
     }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .landscape
+    }
 }
 
 extension GameViewController : GameViewDelegate {
