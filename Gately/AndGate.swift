@@ -2,17 +2,20 @@ import UIKit
 
 class AndGate: Gate {
     
-    init(position: CGPoint, velocity: (CGFloat, CGFloat), zIndex: Int, gateType: GateType) {
+    init(position: CGPoint, velocity: (CGFloat, CGFloat), zIndex: Int, otherInput: Signal) {
         self.position = position
         self.velocity = velocity
         self.zIndex = zIndex
-        self.gateType = gateType
+        self.otherInput = otherInput
     }
     
     var velocity: (CGFloat, CGFloat)
     var zIndex: Int
     var position: CGPoint
-    var gateType: GateType
+    var gateType: GateType {
+        return .and(otherInput)
+    }
+    var otherInput: Signal
     
     let size: CGSize = CGSize(width: 0.25, height: 0.25)
     
