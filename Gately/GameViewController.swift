@@ -58,7 +58,7 @@ class GameViewController: UIViewController {
         let secondPart = Line(position: CGPoint(x: lastX + firstPartLength, y: newLastY), velocity: (speed, 0), zIndex: 0, length: secondPartLength, horizontal: true, color: .black)
         gameView.gameObjects.append(firstPart)
         gameView.gameObjects.append(secondPart)
-        let gate = AndGate(position: CGPoint(x: lastX + firstPartLength, y: newLastY), velocity: (speed, 0), zIndex: 3, gateType: .and(true))
+        let gate = OrGate(position: CGPoint(x: lastX + firstPartLength, y: newLastY), velocity: (speed, 0), zIndex: 3, otherInput: true)
         gameView.gameObjects.append(gate)
         lastLineObject = secondPart
     }
@@ -80,7 +80,10 @@ class GameViewController: UIViewController {
 
 extension GameViewController : GameViewDelegate {
     func gateDidLeaveScreen(gameView: GameView, gate: Gate) {
-        addNewGameObjects()
+        DispatchQueue.main.async {
+            [weak self] in
+            self?.addNewGameObjects()
+        }
     }
     
     func gameViewDidUpdate(gameView: GameView) {
