@@ -25,6 +25,7 @@
 		5A4FACDD225F2A7600B75512 /* OtherInputFromBottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4FACDC225F2A7600B75512 /* OtherInputFromBottom.swift */; };
 		5A4FACDF225FA38700B75512 /* OtherInputBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4FACDE225FA38700B75512 /* OtherInputBase.swift */; };
 		5A4FACE1225FD5DF00B75512 /* OrGate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4FACE0225FD5DF00B75512 /* OrGate.swift */; };
+		5A51C3CC2261E05300DD750B /* NotGate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A51C3CB2261E05300DD750B /* NotGate.swift */; };
 		66CCFB87A25B22F6016A0BED /* Pods_GatelyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F65A60C3062EB915D21ABF0B /* Pods_GatelyTests.framework */; };
 		9F5212915BC6A49ECE406023 /* Pods_Gately.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11BAC180D3B0ABEDBB88572E /* Pods_Gately.framework */; };
 /* End PBXBuildFile section */
@@ -65,6 +66,7 @@
 		5A4FACDC225F2A7600B75512 /* OtherInputFromBottom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherInputFromBottom.swift; sourceTree = "<group>"; };
 		5A4FACDE225FA38700B75512 /* OtherInputBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherInputBase.swift; sourceTree = "<group>"; };
 		5A4FACE0225FD5DF00B75512 /* OrGate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrGate.swift; sourceTree = "<group>"; };
+		5A51C3CB2261E05300DD750B /* NotGate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotGate.swift; sourceTree = "<group>"; };
 		8C556A02843F5CBC6273FD0C /* Pods-Gately.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gately.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gately/Pods-Gately.release.xcconfig"; sourceTree = "<group>"; };
 		8EFFB7EF1C6416A578B14F8B /* Pods-GatelyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GatelyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GatelyTests/Pods-GatelyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F65A60C3062EB915D21ABF0B /* Pods_GatelyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GatelyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +126,7 @@
 				5A3450CE2252138B00144881 /* Gate.swift */,
 				5A330D24224E78ED00DFEEDE /* AndGate.swift */,
 				5A4FACE0225FD5DF00B75512 /* OrGate.swift */,
+				5A51C3CB2261E05300DD750B /* NotGate.swift */,
 				5A34EF092246457500C55BE8 /* GameView.swift */,
 				5A3450CC225212DD00144881 /* GameViewDelegate.swift */,
 				5A34EEE7224633B800C55BE8 /* GameViewController.swift */,
@@ -341,6 +344,7 @@
 				5A34EEE8224633B800C55BE8 /* GameViewController.swift in Sources */,
 				5A34EEE0224633B800C55BE8 /* AppDelegate.swift in Sources */,
 				5A330D23224E78A000DFEEDE /* Dot.swift in Sources */,
+				5A51C3CC2261E05300DD750B /* NotGate.swift in Sources */,
 				5A4FACDD225F2A7600B75512 /* OtherInputFromBottom.swift in Sources */,
 				5A330D25224E78ED00DFEEDE /* AndGate.swift in Sources */,
 				5A4FACDB225F261E00B75512 /* OtherInputFromTop.swift in Sources */,
