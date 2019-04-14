@@ -86,6 +86,8 @@ class GameViewController: UIViewController {
     }
     
     func addNewGameObjects() {
+        let addGateFunctions = [addAndGate, addOrGate, addNotGate]
+        addGateFunctions.randomElement()!()
     }
     
     override func viewDidAppear(_ animated: Bool) {
