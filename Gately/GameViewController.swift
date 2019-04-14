@@ -29,7 +29,7 @@ class GameViewController: UIViewController {
         addNewGameObjects()
     }
     
-    func addNewGameObjects() {
+    private func addGateWithOtherInput(gateSupplier: (CGPoint, (CGFloat, CGFloat), Int, Signal) -> Gate) {
         let firstPartLength = CGFloat.random(in: 0.35...0.65)
         let otherInputLength = CGFloat.random(in: 0.35...1) * firstPartLength
         let secondPartLength = 1 - firstPartLength
@@ -58,9 +58,12 @@ class GameViewController: UIViewController {
         let secondPart = Line(position: CGPoint(x: lastX + firstPartLength, y: newLastY), velocity: (speed, 0), zIndex: 0, length: secondPartLength, horizontal: true, color: .black)
         gameView.gameObjects.append(firstPart)
         gameView.gameObjects.append(secondPart)
-        let gate = OrGate(position: CGPoint(x: lastX + firstPartLength, y: newLastY), velocity: (speed, 0), zIndex: 3, otherInput: true)
+        let gate = gateSupplier(CGPoint(x: lastX + firstPartLength, y: newLastY), (speed, 0), 3, Bool.random())
         gameView.gameObjects.append(gate)
         lastLineObject = secondPart
+    }
+    
+    func addNewGameObjects() {
     }
     
     override func viewDidAppear(_ animated: Bool) {
