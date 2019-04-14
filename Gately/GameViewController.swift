@@ -63,6 +63,14 @@ class GameViewController: UIViewController {
         lastLineObject = secondPart
     }
     
+    private func addAndGate() {
+        addGateWithOtherInput(gateSupplier: AndGate.init)
+    }
+    
+    private func addOrGate() {
+        addGateWithOtherInput(gateSupplier: OrGate.init)
+    }
+    
     func addNewGameObjects() {
     }
     
