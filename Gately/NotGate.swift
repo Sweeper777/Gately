@@ -14,6 +14,7 @@ class NotGate: Gate {
     var gateType: GateType {
         return .not
     }
+    var evaluated = false
     
     let size: CGSize = CGSize(width: 0.25 * 8.0 / 7.0, height: 0.25)
     
