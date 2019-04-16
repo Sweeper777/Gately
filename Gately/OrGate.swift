@@ -13,7 +13,7 @@ class OrGate: Gate {
     var zIndex: Int
     var position: CGPoint
     var gateType: GateType {
-        return .and(otherInput)
+        return .or(otherInput)
     }
     var otherInput: Signal
     var evaluated = false
