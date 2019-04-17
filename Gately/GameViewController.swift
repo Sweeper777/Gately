@@ -7,6 +7,11 @@ class GameViewController: UIViewController {
     let speed: CGFloat = -0.00002
     
     var signalLine: Line!
+    var signalLineSignal: Signal = true {
+        didSet {
+            signalLine.color = signalLineSignal ? .green : .black
+        }
+    }
     var dot: Dot!
     var lastLineObject: Line!
     var lastX: CGFloat {
