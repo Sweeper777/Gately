@@ -28,7 +28,7 @@ class GameViewController: UIViewController {
         gameView.gameObjects.append(signalLine)
         dot = Dot(position: CGPoint(x: 0.1, y: 0.5), zIndex: 2)
         gameView.gameObjects.append(dot)
-        lastLineObject = Line(position: CGPoint(x: 0, y: 0.5), velocity: (speed, 0), zIndex: 0, length: 1, horizontal: true, color: .black)
+        lastLineObject = Line(position: CGPoint(x: 0, y: 0.5), velocity: (speed, 0), zIndex: 0, length: 1, horizontal: true, color: .gray)
         gameView.gameObjects.append(lastLineObject)
         addNewGameObjects()
         addNewGameObjects()
@@ -41,13 +41,14 @@ class GameViewController: UIViewController {
         let newLastY: CGFloat
         let otherInputY: CGFloat
         let otherInputX = lastX + firstPartLength - otherInputLength
+        let otherInputSignal = Signal.random()
         if CGFloat.random(in: 0...1) < lastY {
             // gate goes up
             newLastY = lastY - 0.05
             otherInputY = lastY - 0.1
             let otherInput = OtherInputFromTop(
                 frame: CGRect(x: otherInputX, y: 0, width: otherInputLength, height: otherInputY),
-                velocity: (speed, 0), zIndex: 0, color: .red)
+                velocity: (speed, 0), zIndex: 0, color: otherInputSignal ? .green : .black)
             gameView.gameObjects.append(otherInput)
         } else {
             // gate goes down
@@ -55,15 +56,15 @@ class GameViewController: UIViewController {
             otherInputY = lastY + 0.1
             let otherInput = OtherInputFromBottom(
                 frame: CGRect(x: otherInputX, y: otherInputY, width: otherInputLength, height: 1 - otherInputY),
-                velocity: (speed, 0), zIndex: 0, color: .red)
+                velocity: (speed, 0), zIndex: 0, color: otherInputSignal ? .green : .black)
             gameView.gameObjects.append(otherInput)
         }
-        let firstPart = Line(position: CGPoint(x: lastX, y: lastY), velocity: (speed, 0), zIndex: 0, length: firstPartLength, horizontal: true, color: .black)
+        let firstPart = Line(position: CGPoint(x: lastX, y: lastY), velocity: (speed, 0), zIndex: 0, length: firstPartLength, horizontal: true, color: .gray)
         
-        let secondPart = Line(position: CGPoint(x: lastX + firstPartLength, y: newLastY), velocity: (speed, 0), zIndex: 0, length: secondPartLength, horizontal: true, color: .black)
+        let secondPart = Line(position: CGPoint(x: lastX + firstPartLength, y: newLastY), velocity: (speed, 0), zIndex: 0, length: secondPartLength, horizontal: true, color: .gray)
         gameView.gameObjects.append(firstPart)
         gameView.gameObjects.append(secondPart)
-        let gate = gateSupplier(CGPoint(x: lastX + firstPartLength, y: newLastY), (speed, 0), 3, Bool.random())
+        let gate = gateSupplier(CGPoint(x: lastX + firstPartLength, y: newLastY), (speed, 0), 3, otherInputSignal)
         gameView.gameObjects.append(gate)
         lastLineObject = secondPart
     }
@@ -80,9 +81,9 @@ class GameViewController: UIViewController {
         let firstPartLength = CGFloat.random(in: 0.35...0.65)
         let secondPartLength = 1 - firstPartLength
         
-        let firstPart = Line(position: CGPoint(x: lastX, y: lastY), velocity: (speed, 0), zIndex: 0, length: firstPartLength, horizontal: true, color: .black)
+        let firstPart = Line(position: CGPoint(x: lastX, y: lastY), velocity: (speed, 0), zIndex: 0, length: firstPartLength, horizontal: true, color: .gray)
         
-        let secondPart = Line(position: CGPoint(x: lastX + firstPartLength, y: lastY), velocity: (speed, 0), zIndex: 0, length: secondPartLength, horizontal: true, color: .black)
+        let secondPart = Line(position: CGPoint(x: lastX + firstPartLength, y: lastY), velocity: (speed, 0), zIndex: 0, length: secondPartLength, horizontal: true, color: .gray)
         gameView.gameObjects.append(firstPart)
         gameView.gameObjects.append(secondPart)
         let gate = NotGate(position: CGPoint(x: lastX + firstPartLength, y: lastY), velocity: (speed, 0), zIndex: 3)
