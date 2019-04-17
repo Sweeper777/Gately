@@ -22,6 +22,19 @@ class GameView: UIView {
     
     func commonInit() {
         displayLink = CADisplayLink(target: self, selector: #selector(update))
+        let tapGestureRecogniser = UITapGestureRecognizer(target: self, action: #selector(didTap))
+        addGestureRecognizer(tapGestureRecogniser)
+    }
+    
+    @objc func didTap(_ sender: UITapGestureRecognizer) {
+        let touchPosition = sender.location(in: self)
+        if touchPosition.y < self.height / 2 {
+            // it's a 1
+            delegate?.didSendSignal(gameView: self, signal: true)
+        } else {
+            // it's a 0
+            delegate?.didSendSignal(gameView: self, signal: false)
+        }
     }
     
     @objc func update() {
