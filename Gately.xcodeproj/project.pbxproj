@@ -21,6 +21,7 @@
 		5A34EEFB224633BA00C55BE8 /* GatelyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A34EEFA224633BA00C55BE8 /* GatelyTests.swift */; };
 		5A34EF0622463ED000C55BE8 /* GateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A34EF0522463ED000C55BE8 /* GateType.swift */; };
 		5A34EF0A2246457500C55BE8 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A34EF092246457500C55BE8 /* GameView.swift */; };
+		5A4D260922647E06002FD19C /* XorGate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4D260822647E06002FD19C /* XorGate.swift */; };
 		5A4FACDB225F261E00B75512 /* OtherInputFromTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4FACDA225F261E00B75512 /* OtherInputFromTop.swift */; };
 		5A4FACDD225F2A7600B75512 /* OtherInputFromBottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4FACDC225F2A7600B75512 /* OtherInputFromBottom.swift */; };
 		5A4FACDF225FA38700B75512 /* OtherInputBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4FACDE225FA38700B75512 /* OtherInputBase.swift */; };
@@ -62,6 +63,7 @@
 		5A34EEFC224633BA00C55BE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A34EF0522463ED000C55BE8 /* GateType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GateType.swift; sourceTree = "<group>"; };
 		5A34EF092246457500C55BE8 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		5A4D260822647E06002FD19C /* XorGate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XorGate.swift; sourceTree = "<group>"; };
 		5A4FACDA225F261E00B75512 /* OtherInputFromTop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherInputFromTop.swift; sourceTree = "<group>"; };
 		5A4FACDC225F2A7600B75512 /* OtherInputFromBottom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherInputFromBottom.swift; sourceTree = "<group>"; };
 		5A4FACDE225FA38700B75512 /* OtherInputBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherInputBase.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				5A3450CE2252138B00144881 /* Gate.swift */,
 				5A330D24224E78ED00DFEEDE /* AndGate.swift */,
 				5A4FACE0225FD5DF00B75512 /* OrGate.swift */,
+				5A4D260822647E06002FD19C /* XorGate.swift */,
 				5A51C3CB2261E05300DD750B /* NotGate.swift */,
 				5A34EF092246457500C55BE8 /* GameView.swift */,
 				5A3450CC225212DD00144881 /* GameViewDelegate.swift */,
@@ -342,6 +345,7 @@
 			files = (
 				5A34EF0622463ED000C55BE8 /* GateType.swift in Sources */,
 				5A34EEE8224633B800C55BE8 /* GameViewController.swift in Sources */,
+				5A4D260922647E06002FD19C /* XorGate.swift in Sources */,
 				5A34EEE0224633B800C55BE8 /* AppDelegate.swift in Sources */,
 				5A330D23224E78A000DFEEDE /* Dot.swift in Sources */,
 				5A51C3CC2261E05300DD750B /* NotGate.swift in Sources */,
