@@ -77,6 +77,10 @@ class GameViewController: UIViewController {
         addGateWithOtherInput(gateSupplier: OrGate.init)
     }
     
+    private func addXorGate() {
+        addGateWithOtherInput(gateSupplier: XorGate.init)
+    }
+    
     private func addNotGate() {
         let firstPartLength = CGFloat.random(in: 0.35...0.65)
         let secondPartLength = 1 - firstPartLength
@@ -92,7 +96,7 @@ class GameViewController: UIViewController {
     }
     
     func addNewGameObjects() {
-        let addGateFunctions = [addAndGate, addOrGate, addNotGate]
+        let addGateFunctions = [addAndGate, addOrGate, addNotGate, addXorGate]
         addGateFunctions.randomElement()!()
     }
     
