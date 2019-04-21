@@ -6,7 +6,7 @@ protocol Gate: GameObject {
     /// Size is relative to screen height only
     var size: CGSize { get }
     
-    var evaluated: Bool { get set }
+    var hasBeenCorrectlyEvaluated: Bool? { get set }
 }
 
 extension Gate {
