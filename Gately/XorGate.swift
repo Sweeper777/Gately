@@ -16,7 +16,7 @@ class XorGate: Gate {
         return .xor(otherInput)
     }
     var otherInput: Signal
-    var evaluated = false
+    var hasBeenCorrectlyEvaluated: Bool?
     
     let size: CGSize = CGSize(width: 0.25, height: 0.25)
     
