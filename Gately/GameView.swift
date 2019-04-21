@@ -12,6 +12,7 @@ class GameView: UIView {
         }
     }
     var displayLink: CADisplayLink!
+    var lastTimeStamp: Double? = nil
     weak var delegate: GameViewDelegate?
     
     override func draw(_ rect: CGRect) {
@@ -38,6 +39,15 @@ class GameView: UIView {
     }
     
     @objc func update() {
+        guard let lastTimeStamp = self.lastTimeStamp else {
+            self.lastTimeStamp = displayLink.timestamp
+            setNeedsDisplay()
+            return
+        }
+        let elapsedTime = displayLink.timestamp - lastTimeStamp
+        
+        self.lastTimeStamp = displayLink.timestamp
+        
         for gameObject in gameObjects {
             gameObject.position = gameObject.position.applying(
                 CGAffineTransform(
