@@ -42,7 +42,13 @@ class NotGate: Gate {
         path.close()
         
         UIColor.black.setStroke()
-        UIColor.white.setFill()
+        if hasBeenCorrectlyEvaluated == nil {
+            UIColor.white.setFill()
+        } else if hasBeenCorrectlyEvaluated! {
+            UIColor.green.setFill()
+        } else {
+            UIColor.red.setFill()
+        }
         path.lineWidth = 5
         path.close()
         path.fill()

@@ -47,7 +47,13 @@ class XorGate: Gate {
             endAngle: 7 * .pi / 4,
             clockwise: false)
         UIColor.black.setStroke()
-        UIColor.white.setFill()
+        if hasBeenCorrectlyEvaluated == nil {
+            UIColor.white.setFill()
+        } else if hasBeenCorrectlyEvaluated! {
+            UIColor.green.setFill()
+        } else {
+            UIColor.red.setFill()
+        }
         orPath.lineWidth = 5
         orPath.close()
         orPath.fill()

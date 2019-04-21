@@ -27,7 +27,13 @@ class AndGate: Gate {
         path.addLine(to: CGPoint(x: position.x * rect.width - rect.height / 8, y: (position.y - 0.125) * rect.height))
         path.close()
         path.lineWidth = 10
-        UIColor.white.setFill()
+        if hasBeenCorrectlyEvaluated == nil {
+            UIColor.white.setFill()
+        } else if hasBeenCorrectlyEvaluated! {
+            UIColor.green.setFill()
+        } else {
+            UIColor.red.setFill()
+        }
         UIColor.black.setStroke()
         path.stroke()
         path.fill()
