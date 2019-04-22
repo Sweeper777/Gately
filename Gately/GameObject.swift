@@ -1,6 +1,7 @@
 import CoreGraphics
 
 protocol GameObject : class {
+    /// Measured in "screen dimension per second"
     var velocity: (CGFloat, CGFloat) { get set }
     var zIndex: Int { get set }
     var position: CGPoint { get set }
