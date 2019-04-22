@@ -4,7 +4,7 @@ import SwiftyUtils
 class GameViewController: UIViewController {
     @IBOutlet var gameView: GameView!
     
-    let speed: CGFloat = -0.00002
+    let speed: CGFloat = -0.33333333
     
     var signalLine: Line!
     var signalLineSignal: Signal = true {
