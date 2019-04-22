@@ -51,8 +51,8 @@ class GameView: UIView {
         for gameObject in gameObjects {
             gameObject.position = gameObject.position.applying(
                 CGAffineTransform(
-                    translationX: gameObject.velocity.0 * self.bounds.width,
-                    y: gameObject.velocity.1 * self.bounds.height))
+                    translationX: gameObject.velocity.0 * CGFloat(elapsedTime),
+                    y: gameObject.velocity.1 * CGFloat(elapsedTime)))
             if gameObject.shouldBeDeleted(from: self.bounds) {
                 if let gate = gameObject as? Gate {
                     delegate?.gateDidLeaveScreen(gameView: self, gate: gate)
