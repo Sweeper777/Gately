@@ -136,22 +136,19 @@ extension GameViewController : GameViewDelegate {
     }
     
     func didSendSignal(gameView: GameView, signal: Signal) {
-        let acceptableOffset = abs(speed) * 30
         let acceptableRange: (Gate) -> ClosedRange<CGFloat> = {
-            ($0.position.x * gameView.width - $0.size.width * gameView.height / 2 - acceptableOffset * gameView.width)
+            ($0.position.x * gameView.width - $0.size.width * gameView.height)
             ...
-                ($0.position.x * gameView.width + $0.size.width * gameView.height / 2)
+                ($0.position.x * gameView.width + $0.size.width * gameView.height * 1.5)
         }
         let gateCandidates = gameView.gameObjects.lazy
             .compactMap { $0 as? Gate }
             .filter { acceptableRange($0).contains(self.dot.position.x) }
-        print("Candidate count: \(gateCandidates.count)")
         if let gate = gateCandidates
             .sorted(by: { $0.position.x < $1.position.x })
-            .first(where: { !$0.evaluated }) {
-            gate.evaluated = true
+            .first(where: { $0.hasBeenCorrectlyEvaluated == nil }) {
             let correct = gate.gateType.evaluate(operand: signalLineSignal) == signal
-            print(correct)
+            gate.hasBeenCorrectlyEvaluated = correct
             signalLineSignal = signal
         } else {
             print("No gate to evaluate")
