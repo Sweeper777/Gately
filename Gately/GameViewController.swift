@@ -5,7 +5,13 @@ class GameViewController: UIViewController {
     @IBOutlet var gameView: GameView!
     @IBOutlet var scoreLabel: UILabel!
     
-    let speed: CGFloat = -0.33333333
+    var speed: CGFloat = -0.33333333 {
+        didSet {
+            gameView.gameObjects.filter { $0.velocity.0 != 0 }.forEach { (gameObject) in
+                gameObject.velocity.0 = speed
+            }
+        }
+    }
     
     var signalLine: Line!
     var signalLineSignal: Signal = true {
