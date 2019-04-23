@@ -3,6 +3,7 @@ import SwiftyUtils
 
 class GameViewController: UIViewController {
     @IBOutlet var gameView: GameView!
+    @IBOutlet var scoreLabel: UILabel!
     
     let speed: CGFloat = -0.33333333
     
