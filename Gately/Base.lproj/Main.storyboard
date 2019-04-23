@@ -20,7 +20,23 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dRa-9X-0oo" customClass="GameView" customModule="Gately" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUf-wK-sDh">
+                                        <rect key="frame" x="8" y="8" width="552" height="59"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="59" id="19w-X1-pum"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="45"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="fUf-wK-sDh" firstAttribute="top" secondItem="dRa-9X-0oo" secondAttribute="top" constant="8" id="KGa-Tp-KVq"/>
+                                    <constraint firstAttribute="trailing" secondItem="fUf-wK-sDh" secondAttribute="trailing" constant="8" id="hgP-qs-qgE"/>
+                                    <constraint firstItem="fUf-wK-sDh" firstAttribute="leading" secondItem="dRa-9X-0oo" secondAttribute="leading" constant="8" id="poc-Zd-M0f"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.95686274510000002" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -34,6 +50,7 @@
                     </view>
                     <connections>
                         <outlet property="gameView" destination="dRa-9X-0oo" id="Qa9-75-L8i"/>
+                        <outlet property="scoreLabel" destination="fUf-wK-sDh" id="1St-zJ-lGJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PU9-HS-KTm" userLabel="First Responder" sceneMemberID="firstResponder"/>
