@@ -29,6 +29,12 @@ class GameViewController: UIViewController {
         return lastLineObject.position.y
     }
     
+    var score = 0 {
+        didSet {
+            scoreLabel.text = "\(score)"
+        }
+    }
+    
     override func viewDidLoad() {
         gameView.delegate = self
         signalLine = Line(position: CGPoint(x: 0, y: 0.5), velocity: (0, 0), zIndex: 1, length: 0.1, horizontal: true, color: .green)
