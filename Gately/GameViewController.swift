@@ -162,7 +162,12 @@ extension GameViewController : GameViewDelegate {
             .first(where: { $0.hasBeenCorrectlyEvaluated == nil }) {
             let correct = gate.gateType.evaluate(operand: signalLineSignal) == signal
             gate.hasBeenCorrectlyEvaluated = correct
-            signalLineSignal = signal
+            if correct {
+                signalLineSignal = signal
+                score += 1
+            } else {
+                signalLineSignal = !signal
+            }
         } else {
             print("No gate to evaluate")
         }
