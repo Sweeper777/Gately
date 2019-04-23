@@ -165,6 +165,8 @@ extension GameViewController : GameViewDelegate {
             if correct {
                 signalLineSignal = signal
                 score += 1
+                let speedFunction: (Int) -> CGFloat = { (0.7 / .pi) * atan((1.0 / 16.0) * $0.f - sqrt(3)) + 1 }
+                speed = -speedFunction(score)
             } else {
                 signalLineSignal = !signal
             }
