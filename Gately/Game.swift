@@ -55,4 +55,38 @@ class Game {
         addNewGameObjects()
     }
     
+    private func addGateWithOtherInput(gateSupplier: (CGPoint, (CGFloat, CGFloat), Int, Signal) -> Gate) {
+        let firstPartLength = CGFloat.random(in: 0.35...0.65)
+        let otherInputLength = CGFloat.random(in: 0.35...1) * firstPartLength
+        let secondPartLength = 1 - firstPartLength
+        let newLastY: CGFloat
+        let otherInputY: CGFloat
+        let otherInputX = self.lastX + firstPartLength - otherInputLength
+        let otherInputSignal = Signal.random()
+        if CGFloat.random(in: 0...1) < self.lastY {
+            // gate goes up
+            newLastY = self.lastY - 0.05
+            otherInputY = self.lastY - 0.1
+            let otherInput = OtherInputFromTop(
+                frame: CGRect(x: otherInputX, y: 0, width: otherInputLength, height: otherInputY),
+                velocity: (self.speed, 0), zIndex: 0, color: otherInputSignal ? .green : .black)
+            gameObjects.append(otherInput)
+        } else {
+            // gate goes down
+            newLastY = self.lastY + 0.05
+            otherInputY = self.lastY + 0.1
+            let otherInput = OtherInputFromBottom(
+                frame: CGRect(x: otherInputX, y: otherInputY, width: otherInputLength, height: 1 - otherInputY),
+                velocity: (self.speed, 0), zIndex: 0, color: otherInputSignal ? .green : .black)
+            gameObjects.append(otherInput)
+        }
+        let firstPart = Line(position: CGPoint(x: self.lastX, y: self.lastY), velocity: (self.speed, 0), zIndex: 0, length: firstPartLength, horizontal: true, color: .gray)
+        
+        let secondPart = Line(position: CGPoint(x: self.lastX + firstPartLength, y: newLastY), velocity: (self.speed, 0), zIndex: 0, length: secondPartLength, horizontal: true, color: .gray)
+        gameObjects.append(firstPart)
+        gameObjects.append(secondPart)
+        let gate = gateSupplier(CGPoint(x: self.lastX + firstPartLength, y: newLastY), (self.speed, 0), 3, otherInputSignal)
+        gameObjects.append(gate)
+        self.lastLineObject = secondPart
+    }
 }
