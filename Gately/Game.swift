@@ -116,4 +116,8 @@ class Game {
         self.lastLineObject = secondPart
     }
     
+    func addNewGameObjects() {
+        let addGateFunctions = [addAndGate, addOrGate, addNotGate, addXorGate]
+        addGateFunctions.randomElement()!()
+    }
 }
