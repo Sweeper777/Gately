@@ -3,14 +3,6 @@ import UIKit
 import UIKit
 
 class GameView: UIView {
-    var gameObjects: [GameObject] = [] {
-        didSet {
-            let sorted = gameObjects.map { $0.zIndex }.sorted()
-            if gameObjects.map({ $0.zIndex }) != sorted {
-                gameObjects.sort { $0.zIndex < $1.zIndex }
-            }
-        }
-    }
     var displayLink: CADisplayLink!
     var lastTimeStamp: Double? = nil
     weak var delegate: GameViewDelegate?
