@@ -8,6 +8,8 @@ class GameView: UIView {
     weak var delegate: GameViewDelegate?
     
     override func draw(_ rect: CGRect) {
+        guard let gameObjects = delegate?.gameObjects else { return }
+        
         for gameObject in gameObjects {
             gameObject.draw(in: self.bounds)
         }
@@ -31,6 +33,8 @@ class GameView: UIView {
     }
     
     @objc func update() {
+        guard let gameObjects = delegate?.gameObjects else { return }
+        
         guard let lastTimeStamp = self.lastTimeStamp else {
             self.lastTimeStamp = displayLink.timestamp
             setNeedsDisplay()
@@ -51,7 +55,7 @@ class GameView: UIView {
                 }
             }
         }
-        gameObjects.removeAll(where: { $0.shouldBeDeleted(from: self.bounds) })
+        delegate?.removeAllGameObjects(where: { $0.shouldBeDeleted(from: self.bounds) })
         delegate?.gameViewDidUpdate(gameView: self)
         setNeedsDisplay()
     }
