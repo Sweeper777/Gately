@@ -89,4 +89,18 @@ class Game {
         gameObjects.append(gate)
         self.lastLineObject = secondPart
     }
+    private func addNotGate() {
+        let firstPartLength = CGFloat.random(in: 0.35...0.65)
+        let secondPartLength = 1 - firstPartLength
+        
+        let firstPart = Line(position: CGPoint(x: self.lastX, y: self.lastY), velocity: (self.speed, 0), zIndex: 0, length: firstPartLength, horizontal: true, color: .gray)
+        
+        let secondPart = Line(position: CGPoint(x: self.lastX + firstPartLength, y: self.lastY), velocity: (self.speed, 0), zIndex: 0, length: secondPartLength, horizontal: true, color: .gray)
+        gameObjects.append(firstPart)
+        gameObjects.append(secondPart)
+        let gate = NotGate(position: CGPoint(x: self.lastX + firstPartLength, y: self.lastY), velocity: (self.speed, 0), zIndex: 3)
+        gameObjects.append(gate)
+        self.lastLineObject = secondPart
+    }
+    
 }
