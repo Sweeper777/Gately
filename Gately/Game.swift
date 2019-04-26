@@ -89,6 +89,19 @@ class Game {
         gameObjects.append(gate)
         self.lastLineObject = secondPart
     }
+    
+    private func addAndGate() {
+        addGateWithOtherInput(gateSupplier: AndGate.init)
+    }
+    
+    private func addOrGate() {
+        addGateWithOtherInput(gateSupplier: OrGate.init)
+    }
+    
+    private func addXorGate() {
+        addGateWithOtherInput(gateSupplier: XorGate.init)
+    }
+    
     private func addNotGate() {
         let firstPartLength = CGFloat.random(in: 0.35...0.65)
         let secondPartLength = 1 - firstPartLength
