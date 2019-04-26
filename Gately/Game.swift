@@ -55,6 +55,33 @@ class Game {
         addNewGameObjects()
     }
     
+    func sendSignal(_ signal: Signal) {
+        let acceptableRange: (Gate) -> ClosedRange<CGFloat> = {
+            ($0.position.x - $0.size.width / self.whRatio)
+                ...
+                ($0.position.x + $0.size.width / self.whRatio * 1.5)
+        }
+        let gateCandidates = gameObjects.lazy
+            .compactMap { $0 as? Gate }
+            .filter { acceptableRange($0).contains(self.dot.position.x) }
+        if let gate = gateCandidates
+            .sorted(by: { $0.position.x < $1.position.x })
+            .first(where: { $0.hasBeenCorrectlyEvaluated == nil }) {
+            let correct = gate.gateType.evaluate(operand: signalLineSignal) == signal
+            gate.hasBeenCorrectlyEvaluated = correct
+            if correct {
+                signalLineSignal = signal
+                score += 1
+                let speedFunction: (Int) -> CGFloat = { (0.7 / .pi) * atan((1.0 / 16.0) * $0.f - sqrt(3)) + 1 }
+                speed = -speedFunction(score)
+            } else {
+                signalLineSignal = !signal
+            }
+        } else {
+            print("No gate to evaluate")
+        }
+    }
+    
     private func addGateWithOtherInput(gateSupplier: (CGPoint, (CGFloat, CGFloat), Int, Signal) -> Gate) {
         let firstPartLength = CGFloat.random(in: 0.35...0.65)
         let otherInputLength = CGFloat.random(in: 0.35...1) * firstPartLength
