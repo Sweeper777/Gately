@@ -36,23 +36,24 @@ extension GameViewController : GameViewDelegate {
     func gateDidLeaveScreen(gameView: GameView, gate: Gate) {
         DispatchQueue.main.async {
             [weak self] in
-            self?.addNewGameObjects()
+            self?.game.addNewGameObjects()
         }
     }
     
     func gameViewDidUpdate(gameView: GameView) {
-        let dotAndSignalLineFrame = dot.frame(whenDrawnIn: gameView.bounds).union(signalLine.frame(whenDrawnIn: gameView.bounds))
-        let gates = gameView.gameObjects.compactMap { $0 as? Gate }
+        let dotAndSignalLineFrame = game.dot.frame(whenDrawnIn: gameView.bounds).union(game.signalLine.frame(whenDrawnIn: gameView.bounds))
+        let gates = game.gameObjects.compactMap { $0 as? Gate }
         if let gate = gates.first (where: {
             let frame = $0.frame(whenDrawnIn: gameView.bounds)
             return frame.contains(dotAndSignalLineFrame) || frame.x < dotAndSignalLineFrame.x
         }) {
-            signalLine.position.y = gate.position.y
-            dot.position.y = gate.position.y
+            game.signalLine.position.y = gate.position.y
+            game.dot.position.y = gate.position.y
         }
     }
     
     func didSendSignal(gameView: GameView, signal: Signal) {
+        game.sendSignal(signal)
         }
     }
 }
