@@ -7,17 +7,12 @@ class GameViewController: UIViewController {
     
     }
     
+    var game: Game!
     
     override func viewDidLoad() {
+        game = Game(whRatio: gameView.width / gameView.height)
+        game.delegate = self
         gameView.delegate = self
-        signalLine = Line(position: CGPoint(x: 0, y: 0.5), velocity: (0, 0), zIndex: 1, length: 0.1, horizontal: true, color: .green)
-        gameView.gameObjects.append(signalLine)
-        dot = Dot(position: CGPoint(x: 0.1, y: 0.5), zIndex: 2)
-        gameView.gameObjects.append(dot)
-        lastLineObject = Line(position: CGPoint(x: 0, y: 0.5), velocity: (speed, 0), zIndex: 0, length: 1, horizontal: true, color: .gray)
-        gameView.gameObjects.append(lastLineObject)
-        addNewGameObjects()
-        addNewGameObjects()
     }
     
     private func addGateWithOtherInput(gateSupplier: (CGPoint, (CGFloat, CGFloat), Int, Signal) -> Gate) {
