@@ -27,6 +27,8 @@
 		5A4FACDF225FA38700B75512 /* OtherInputBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4FACDE225FA38700B75512 /* OtherInputBase.swift */; };
 		5A4FACE1225FD5DF00B75512 /* OrGate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4FACE0225FD5DF00B75512 /* OrGate.swift */; };
 		5A51C3CC2261E05300DD750B /* NotGate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A51C3CB2261E05300DD750B /* NotGate.swift */; };
+		5AA6A1E1226EF94C00CFF561 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA6A1E0226EF94C00CFF561 /* Game.swift */; };
+		5AA6A1E3226EF9A000CFF561 /* GameDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA6A1E2226EF9A000CFF561 /* GameDelegate.swift */; };
 		66CCFB87A25B22F6016A0BED /* Pods_GatelyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F65A60C3062EB915D21ABF0B /* Pods_GatelyTests.framework */; };
 		9F5212915BC6A49ECE406023 /* Pods_Gately.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11BAC180D3B0ABEDBB88572E /* Pods_Gately.framework */; };
 /* End PBXBuildFile section */
@@ -69,6 +71,8 @@
 		5A4FACDE225FA38700B75512 /* OtherInputBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherInputBase.swift; sourceTree = "<group>"; };
 		5A4FACE0225FD5DF00B75512 /* OrGate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrGate.swift; sourceTree = "<group>"; };
 		5A51C3CB2261E05300DD750B /* NotGate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotGate.swift; sourceTree = "<group>"; };
+		5AA6A1E0226EF94C00CFF561 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		5AA6A1E2226EF9A000CFF561 /* GameDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDelegate.swift; sourceTree = "<group>"; };
 		8C556A02843F5CBC6273FD0C /* Pods-Gately.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gately.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gately/Pods-Gately.release.xcconfig"; sourceTree = "<group>"; };
 		8EFFB7EF1C6416A578B14F8B /* Pods-GatelyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GatelyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GatelyTests/Pods-GatelyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F65A60C3062EB915D21ABF0B /* Pods_GatelyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GatelyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,6 +134,8 @@
 				5A4FACE0225FD5DF00B75512 /* OrGate.swift */,
 				5A4D260822647E06002FD19C /* XorGate.swift */,
 				5A51C3CB2261E05300DD750B /* NotGate.swift */,
+				5AA6A1E0226EF94C00CFF561 /* Game.swift */,
+				5AA6A1E2226EF9A000CFF561 /* GameDelegate.swift */,
 				5A34EF092246457500C55BE8 /* GameView.swift */,
 				5A3450CC225212DD00144881 /* GameViewDelegate.swift */,
 				5A34EEE7224633B800C55BE8 /* GameViewController.swift */,
@@ -355,7 +361,9 @@
 				5A4FACE1225FD5DF00B75512 /* OrGate.swift in Sources */,
 				5A4FACDF225FA38700B75512 /* OtherInputBase.swift in Sources */,
 				5A330D21224E788900DFEEDE /* Line.swift in Sources */,
+				5AA6A1E3226EF9A000CFF561 /* GameDelegate.swift in Sources */,
 				5A3450CF2252138B00144881 /* Gate.swift in Sources */,
+				5AA6A1E1226EF94C00CFF561 /* Game.swift in Sources */,
 				5A34EF0A2246457500C55BE8 /* GameView.swift in Sources */,
 				5A330D1F224E785900DFEEDE /* GameObject.swift in Sources */,
 				5A3450CD225212DD00144881 /* GameViewDelegate.swift in Sources */,
