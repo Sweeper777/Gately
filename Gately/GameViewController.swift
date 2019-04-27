@@ -15,71 +15,7 @@ class GameViewController: UIViewController {
         gameView.delegate = self
     }
     
-    private func addGateWithOtherInput(gateSupplier: (CGPoint, (CGFloat, CGFloat), Int, Signal) -> Gate) {
-        let firstPartLength = CGFloat.random(in: 0.35...0.65)
-        let otherInputLength = CGFloat.random(in: 0.35...1) * firstPartLength
-        let secondPartLength = 1 - firstPartLength
-        let newLastY: CGFloat
-        let otherInputY: CGFloat
-        let otherInputX = lastX + firstPartLength - otherInputLength
-        let otherInputSignal = Signal.random()
-        if CGFloat.random(in: 0...1) < lastY {
-            // gate goes up
-            newLastY = lastY - 0.05
-            otherInputY = lastY - 0.1
-            let otherInput = OtherInputFromTop(
-                frame: CGRect(x: otherInputX, y: 0, width: otherInputLength, height: otherInputY),
-                velocity: (speed, 0), zIndex: 0, color: otherInputSignal ? .green : .black)
-            gameView.gameObjects.append(otherInput)
-        } else {
-            // gate goes down
-            newLastY = lastY + 0.05
-            otherInputY = lastY + 0.1
-            let otherInput = OtherInputFromBottom(
-                frame: CGRect(x: otherInputX, y: otherInputY, width: otherInputLength, height: 1 - otherInputY),
-                velocity: (speed, 0), zIndex: 0, color: otherInputSignal ? .green : .black)
-            gameView.gameObjects.append(otherInput)
-        }
-        let firstPart = Line(position: CGPoint(x: lastX, y: lastY), velocity: (speed, 0), zIndex: 0, length: firstPartLength, horizontal: true, color: .gray)
-        
-        let secondPart = Line(position: CGPoint(x: lastX + firstPartLength, y: newLastY), velocity: (speed, 0), zIndex: 0, length: secondPartLength, horizontal: true, color: .gray)
-        gameView.gameObjects.append(firstPart)
-        gameView.gameObjects.append(secondPart)
-        let gate = gateSupplier(CGPoint(x: lastX + firstPartLength, y: newLastY), (speed, 0), 3, otherInputSignal)
-        gameView.gameObjects.append(gate)
-        lastLineObject = secondPart
-    }
-    
-    private func addAndGate() {
-        addGateWithOtherInput(gateSupplier: AndGate.init)
-    }
-    
-    private func addOrGate() {
-        addGateWithOtherInput(gateSupplier: OrGate.init)
-    }
-    
-    private func addXorGate() {
-        addGateWithOtherInput(gateSupplier: XorGate.init)
-    }
-    
-    private func addNotGate() {
-        let firstPartLength = CGFloat.random(in: 0.35...0.65)
-        let secondPartLength = 1 - firstPartLength
-        
-        let firstPart = Line(position: CGPoint(x: lastX, y: lastY), velocity: (speed, 0), zIndex: 0, length: firstPartLength, horizontal: true, color: .gray)
-        
-        let secondPart = Line(position: CGPoint(x: lastX + firstPartLength, y: lastY), velocity: (speed, 0), zIndex: 0, length: secondPartLength, horizontal: true, color: .gray)
-        gameView.gameObjects.append(firstPart)
-        gameView.gameObjects.append(secondPart)
-        let gate = NotGate(position: CGPoint(x: lastX + firstPartLength, y: lastY), velocity: (speed, 0), zIndex: 3)
-        gameView.gameObjects.append(gate)
-        lastLineObject = secondPart
-    }
-    
-    func addNewGameObjects() {
-        let addGateFunctions = [addAndGate, addOrGate, addNotGate, addXorGate]
-        addGateFunctions.randomElement()!()
-    }
+
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -117,30 +53,6 @@ extension GameViewController : GameViewDelegate {
     }
     
     func didSendSignal(gameView: GameView, signal: Signal) {
-        let acceptableRange: (Gate) -> ClosedRange<CGFloat> = {
-            ($0.position.x * gameView.width - $0.size.width * gameView.height)
-            ...
-                ($0.position.x * gameView.width + $0.size.width * gameView.height * 1.5)
         }
-        let gateCandidates = gameView.gameObjects.lazy
-            .compactMap { $0 as? Gate }
-            .filter { acceptableRange($0).contains(self.dot.position.x) }
-        if let gate = gateCandidates
-            .sorted(by: { $0.position.x < $1.position.x })
-            .first(where: { $0.hasBeenCorrectlyEvaluated == nil }) {
-            let correct = gate.gateType.evaluate(operand: signalLineSignal) == signal
-            gate.hasBeenCorrectlyEvaluated = correct
-            if correct {
-                signalLineSignal = signal
-                score += 1
-                let speedFunction: (Int) -> CGFloat = { (0.7 / .pi) * atan((1.0 / 16.0) * $0.f - sqrt(3)) + 1 }
-                speed = -speedFunction(score)
-            } else {
-                signalLineSignal = !signal
-            }
-        } else {
-            print("No gate to evaluate")
-        }
-        
     }
 }
