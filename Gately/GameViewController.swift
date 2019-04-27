@@ -5,6 +5,8 @@ class GameViewController: UIViewController {
     @IBOutlet var gameView: GameView!
     @IBOutlet var scoreLabel: UILabel!
     
+    var gameObjects: [GameObject] {
+        return game.gameObjects
     }
     
     var game: Game!
@@ -54,6 +56,21 @@ extension GameViewController : GameViewDelegate {
     
     func didSendSignal(gameView: GameView, signal: Signal) {
         game.sendSignal(signal)
+    }
+    
+    func removeAllGameObjects(where predicate: (GameObject) -> Bool) {
+        game.gameObjects.removeAll(where: predicate)
+    }
+}
+
+extension GameViewController : GameDelegate {
+    func speedDidChange(_ game: Game, newSpeed: CGFloat) {
+        game.gameObjects.filter { $0.velocity.0 != 0 }.forEach { (gameObject) in
+            gameObject.velocity.0 = newSpeed
         }
+    }
+    
+    func scoreDidChange(_ game: Game, newScore: Int) {
+        scoreLabel.text = "\(newScore)"
     }
 }
