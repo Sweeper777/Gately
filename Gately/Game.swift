@@ -146,5 +146,11 @@ class Game {
     func addNewGameObjects() {
         let addGateFunctions = [addAndGate, addOrGate, addNotGate, addXorGate]
         addGateFunctions.randomElement()!()
+    private func xorProbability(_ time: TimeInterval) -> Double {
+        if time > 36 {
+            return 0.25 - 4 / (time - 20)
+        }
+        return 0
+    }
     }
 }
