@@ -59,6 +59,7 @@ extension GameViewController : GameViewDelegate {
             game.signalLine.position.y = gate.position.y
             game.dot.position.y = gate.position.y
         }
+        gameElapsedTime += gameView.displayLink.targetTimestamp - gameView.displayLink.timestamp
     }
     
     func didSendSignal(gameView: GameView, signal: Signal) {
