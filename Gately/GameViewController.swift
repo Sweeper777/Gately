@@ -11,6 +11,13 @@ class GameViewController: UIViewController {
     
     var game: Game!
     
+    var gameElapsedTime: TimeInterval = 0 {
+        didSet {
+            let speedFunction: (TimeInterval) -> CGFloat = { (1 / .pi) * (atan((1.0 / 34.0) * $0.f - 1.06) + .pi / 2) }
+            game.speed = -speedFunction(gameElapsedTime)
+        }
+    }
+    
     override func viewDidLoad() {
         game = Game(whRatio: gameView.width / gameView.height)
         game.delegate = self
