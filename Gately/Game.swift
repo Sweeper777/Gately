@@ -40,6 +40,7 @@ class Game {
     }
     
     var whRatio: CGFloat
+    var started = false
     
     init(whRatio: CGFloat) {
         self.whRatio = whRatio
