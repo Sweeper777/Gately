@@ -160,5 +160,7 @@ class Game {
         return 0
     }
     
+    private func andOrProbability(_ time: TimeInterval) -> Double {
+        return (1 - xorProbability(time) - notProbability(time)) / 2
     }
 }
