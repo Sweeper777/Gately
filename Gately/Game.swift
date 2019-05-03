@@ -51,8 +51,8 @@ class Game {
         gameObjects.append(dot)
         gameObjects.append(lastLineObject)
         
-        addNewGameObjects()
-        addNewGameObjects()
+        addNewGameObjects(elapsedTime: 0)
+        addNewGameObjects(elapsedTime: 0)
     }
     
     func sendSignal(_ signal: Signal) {

@@ -45,7 +45,7 @@ extension GameViewController : GameViewDelegate {
     func gateDidLeaveScreen(gameView: GameView, gate: Gate) {
         DispatchQueue.main.async {
             [weak self] in
-            self?.game.addNewGameObjects()
+            self?.game.addNewGameObjects(elapsedTime: self?.gameElapsedTime ?? 0)
         }
     }
     
