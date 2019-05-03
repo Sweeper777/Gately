@@ -143,9 +143,20 @@ class Game {
         self.lastLineObject = secondPart
     }
     
-    func addNewGameObjects() {
-        let addGateFunctions = [addAndGate, addOrGate, addNotGate, addXorGate]
-        addGateFunctions.randomElement()!()
+    func addNewGameObjects(elapsedTime: TimeInterval) {
+        let (andOrP, notP, xorP) = (andOrProbability(elapsedTime), notProbability(elapsedTime), xorProbability(elapsedTime))
+        let randomDouble = Double.random(in: 0...1)
+        if randomDouble < andOrP {
+            addAndGate()
+        } else if randomDouble < andOrP + notP {
+            addNotGate()
+        } else if randomDouble < andOrP + notP + xorP {
+            addXorGate()
+        } else {
+            addOrGate()
+        }
+    }
+    
     private func xorProbability(_ time: TimeInterval) -> Double {
         if time > 36 {
             return 0.25 - 4 / (time - 20)
