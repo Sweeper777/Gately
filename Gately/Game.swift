@@ -81,6 +81,11 @@ class Game {
         }
     }
     
+    func start() {
+        gameObjects.filter { $0 !== dot && $0 !== signalLine }.forEach { $0.velocity.0 = speed }
+        started = true
+    }
+    
     private func addGateWithOtherInput(gateSupplier: (CGPoint, (CGFloat, CGFloat), Int, Signal) -> Gate) {
         let firstPartLength = CGFloat.random(in: 0.35...0.65)
         let otherInputLength = CGFloat.random(in: 0.35...1) * firstPartLength
