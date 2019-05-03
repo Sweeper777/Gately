@@ -152,5 +152,13 @@ class Game {
         }
         return 0
     }
+    
+    private func notProbability(_ time: TimeInterval) -> Double {
+        if time > 16 {
+            return 0.25 - 4 / time
+        }
+        return 0
+    }
+    
     }
 }
