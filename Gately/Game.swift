@@ -11,7 +11,7 @@ class Game {
             }
         }
     }
-    var speed: CGFloat = -0.33333333 {
+    var speed: CGFloat = 0 {
         didSet {
            delegate?.speedDidChange(self, newSpeed: speed)
         }
