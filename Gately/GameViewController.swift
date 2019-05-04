@@ -24,11 +24,8 @@ class GameViewController: UIViewController {
         gameView.delegate = self
     }
     
-
-    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        gameView.displayLink.add(to: .current, forMode: .common)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -63,6 +60,12 @@ extension GameViewController : GameViewDelegate {
     }
     
     func didSendSignal(gameView: GameView, signal: Signal) {
+        if !game.started {
+            gameElapsedTime = 0
+            gameView.displayLink.add(to: .current, forMode: .common)
+            game.start()
+            return
+        }
         game.sendSignal(signal)
     }
     
